@@ -39,7 +39,7 @@ A **SmartHome IoT control app** for **Android**. It simulates controlling smart 
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/thomas-brl/smarthome.git
+   git clone https://github.com/thomas-brl/smarthome-app.git
    ```
 2. Open the project in Android Studio (**File > Open**, select the cloned folder).
 3. Let Gradle sync automatically. If it doesn't, click **File > Sync Project with Gradle Files**.
