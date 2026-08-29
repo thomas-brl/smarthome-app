@@ -1,0 +1,126 @@
+{
+  "rules": {
+    ".read": true,
+
+    // Allow writes ONLY if the user is authenticated.
+    ".write": "auth !== null",
+
+    "Maison": {
+      // Prevents deletion of "Maison" and blocks adding rooms that aren't predefined.
+      ".validate": "newData.exists() && newData.hasChildren(['Bureau', 'Chambre', 'Cuisine', 'Garage', 'PorteEntree', 'SalleDeBain', 'Salon'])",
+
+      "Bureau": {
+        ".validate": "newData.exists() && newData.hasChildren(['Humidite', 'Lumiere', 'Temperature'])",
+        "Humidite": {
+          ".validate": "newData.isNumber()"
+        },
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Temperature": {
+          ".validate": "newData.isNumber()"
+        }
+      },
+
+      "Chambre": {
+        ".validate": "newData.exists() && newData.hasChildren(['Humidite', 'Lumiere', 'Temperature', 'Systeme ClapClap'])",
+        "Humidite": {
+          ".validate": "newData.isNumber()"
+        },
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Temperature": {
+          ".validate": "newData.isNumber()"
+        },
+        "Systeme ClapClap": {
+          ".validate": "newData.isBoolean()"
+        }
+      },
+
+      "Cuisine": {
+        ".validate": "newData.exists() && newData.hasChildren(['Incendie', 'Lumiere'])",
+        "Incendie": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        }
+      },
+
+      "Garage": {
+        ".validate": "newData.exists() && newData.hasChildren(['Lumiere', 'Serrure Deverrouillee'])",
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Serrure Deverrouillee": {
+          ".validate": "newData.isBoolean()"
+        }
+      },
+
+      "PorteEntree": {
+        ".validate": "newData.exists() && newData.hasChildren(['CapteurPresence', 'Lumiere', 'Serrure Deverrouillee', 'Sonnette'])",
+        "CapteurPresence": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Serrure Deverrouillee": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Sonnette": {
+          ".validate": "newData.isBoolean()"
+        }
+      },
+
+      "SalleDeBain": {
+        ".validate": "newData.exists() && newData.hasChildren(['Humidite', 'Lumiere', 'Temperature'])",
+        "Humidite": {
+          ".validate": "newData.isNumber()"
+        },
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        },
+        "Temperature": {
+          ".validate": "newData.isNumber()"
+        }
+      },
+
+      "Salon": {
+        ".validate": "newData.exists() && newData.hasChildren(['Climatisation', 'Humidite', 'Lumiere', 'OuvertureStores', 'Temperature'])",
+        "Climatisation": {
+          ".validate": "newData.exists() && newData.hasChildren(['Air Conditionné', 'Auto', 'Chauffage', 'Température Cible'])",
+          "Air Conditionné": {
+            ".validate": "newData.isBoolean()"
+          },
+          "Auto": {
+            ".validate": "newData.isBoolean()"
+          },
+          "Chauffage": {
+            ".validate": "newData.isBoolean()"
+          },
+          "Température Cible": {
+            ".validate": "newData.isNumber()"
+          }
+        },
+        "Humidite": {
+          ".validate": "newData.isNumber()"
+        },
+        "Lumiere": {
+          ".validate": "newData.isBoolean()"
+        },
+        "OuvertureStores": {
+          ".validate": "newData.isNumber()"
+        },
+        "Temperature": {
+          ".validate": "newData.isNumber()"
+        }
+      }
+    },
+
+    "temperature": {
+      ".validate": "newData.isNumber()"
+    }
+  }
+}
