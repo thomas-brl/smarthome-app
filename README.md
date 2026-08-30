@@ -27,6 +27,10 @@ A **SmartHome IoT control app** for **Android**. It simulates controlling smart 
 - **Min SDK:** 26 (Android 8.0)
 - **Target / Compile SDK:** 35 (Android 15)
 
+## Download
+ 
+Grab the latest APK from the [Releases page](https://github.com/thomas-brl/smarthome-app/releases/latest) and install it directly on your Android device.
+
 ## Getting Started
 
 ### Prerequisites
